@@ -1,25 +1,413 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aspirasi MPK</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aspirasi MPK</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f6fa;
+  color: #26344a;
+  line-height: 1.6;
+}
+
+header {
+  background: #101d35;
+  color: white;
+  padding: 20px 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.logo span {
+  color: #d6b66e;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+  font-size: 14px;
+}
+
+nav a:hover {
+  color: #d6b66e;
+}
+
+.hero {
+  background: linear-gradient(135deg, #101d35, #29466e);
+  color: white;
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.hero small {
+  color: #d6b66e;
+  letter-spacing: 4px;
+  font-weight: bold;
+}
+
+.hero h1 {
+  font-size: 48px;
+  margin: 20px 0;
+}
+
+.hero h1 span {
+  color: #d6b66e;
+}
+
+.hero p {
+  max-width: 550px;
+  margin: auto;
+  color: #e0e7f1;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 30px;
+  background: #d6b66e;
+  color: #101d35;
+  padding: 13px 28px;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+section {
+  padding: 70px 8%;
+}
+
+.heading {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.heading small {
+  color: #a88743;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.heading h2 {
+  color: #101d35;
+  font-size: 30px;
+  margin-top: 8px;
+}
+
+.heading p {
+  color: #718096;
+  margin-top: 8px;
+}
+
+.about {
+  background: white;
+  max-width: 850px;
+  margin: auto;
+  padding: 35px;
+  border-radius: 12px;
+  text-align: center;
+  border-left: 5px solid #d6b66e;
+  box-shadow: 0 5px 20px #0000000d;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.feature {
+  background: white;
+  text-align: center;
+  padding: 30px 20px;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px #0000000d;
+}
+
+.feature .icon {
+  font-size: 35px;
+}
+
+.feature h3 {
+  color: #101d35;
+  margin: 12px 0;
+}
+
+.feature p {
+  color: #718096;
+  font-size: 14px;
+}
+
+#aspirasi {
+  background: #edf1f7;
+}
+
+.form-card {
+  max-width: 650px;
+  margin: auto;
+  padding: 35px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 5px 25px #00000012;
+}
+
+label {
+  display: block;
+  margin: 17px 0 7px;
+  color: #101d35;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 13px;
+  border: 1px solid #dce2eb;
+  border-radius: 7px;
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+  background: #fafbfc;
+}
+
+textarea {
+  min-height: 130px;
+  resize: vertical;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: 2px solid #d6b66e;
+}
+
+.note {
+  background: #f4f6fa;
+  padding: 13px;
+  border-radius: 7px;
+  font-size: 12px;
+  color: #718096;
+  margin: 20px 0;
+}
+
+.submit {
+  width: 100%;
+  padding: 15px;
+  background: #101d35;
+  color: white;
+  border: none;
+  border-radius: 7px;
+  font-weight: bold;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.submit:hover {
+  background: #29466e;
+}
+
+footer {
+  background: #101d35;
+  color: white;
+  text-align: center;
+  padding: 30px 15px;
+  font-size: 13px;
+}
+
+footer span {
+  color: #d6b66e;
+}
+
+@media(max-width: 650px) {
+  header {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  nav a {
+    margin: 0 8px;
+    font-size: 12px;
+  }
+
+  .hero {
+    padding: 75px 20px;
+  }
+
+  .hero h1 {
+    font-size: 36px;
+  }
+
+  .features {
+    grid-template-columns: 1fr;
+  }
+
+  section {
+    padding: 55px 6%;
+  }
+
+  .form-card {
+    padding: 23px;
+  }
+}
+</style>
 </head>
+
 <body>
-    <h1>ASPIRASI MPK</h1>
-    <h2>Suara Kamu, Perubahan Kita!</h2>
 
-    <p>Selamat datang di website Aspirasi MPK.</p>
-    <p>Sampaikan kritik, saran, dan aspirasi kamu di sini.</p>
+<header>
+  <div class="logo">MPK<span>.</span></div>
 
-    <form>
-        <input type="text" placeholder="Nama (opsional)">
-        <br><br>
-        <input type="text" placeholder="Kelas">
-        <br><br>
-        <textarea placeholder="Tuliskan aspirasi kamu"></textarea>
-        <br><br>
-        <button type="submit">Kirim Aspirasi</button>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#tentang">Tentang</a>
+    <a href="#aspirasi">Aspirasi</a>
+  </nav>
+</header>
+
+<div class="hero" id="home">
+  <small>MAJELIS PERWAKILAN KELAS</small>
+
+  <h1>SUARA KAMU,<br>
+  <span>PERUBAHAN KITA.</span></h1>
+
+  <p>
+    Setiap suara memiliki arti.
+    Sampaikan aspirasi, kritik, dan saran
+    untuk menciptakan lingkungan sekolah
+    yang lebih baik.
+  </p>
+
+  <a href="#aspirasi" class="btn">
+    Sampaikan Aspirasi →
+  </a>
+</div>
+
+<section id="tentang">
+  <div class="heading">
+    <small>TENTANG KAMI</small>
+    <h2>Aspirasi MPK</h2>
+    <p>Wadah suara dan pendapat seluruh siswa.</p>
+  </div>
+
+  <div class="about">
+    <p>
+      Website Aspirasi MPK merupakan sarana
+      bagi seluruh siswa untuk menyampaikan
+      pendapat, kritik, saran, maupun ide
+      demi kemajuan dan kenyamanan lingkungan
+      sekolah.
+    </p>
+    <br>
+    <strong>Karena setiap suara layak didengar.</strong>
+  </div>
+</section>
+
+<section>
+  <div class="heading">
+    <small>LAYANAN KAMI</small>
+    <h2>Suara Untuk Perubahan</h2>
+    <p>Salurkan pendapatmu melalui tiga hal berikut.</p>
+  </div>
+
+  <div class="features">
+    <div class="feature">
+      <div class="icon">💡</div>
+      <h3>Ide & Saran</h3>
+      <p>Berikan ide kreatif untuk kemajuan sekolah.</p>
+    </div>
+
+    <div class="feature">
+      <div class="icon">📢</div>
+      <h3>Kritik</h3>
+      <p>Sampaikan masukan secara sopan dan membangun.</p>
+    </div>
+
+    <div class="feature">
+      <div class="icon">🤝</div>
+      <h3>Aspirasi</h3>
+      <p>Suara siswa menjadi bagian dari perubahan.</p>
+    </div>
+  </div>
+</section>
+
+<section id="aspirasi">
+  <div class="heading">
+    <small>FORMULIR SISWA</small>
+    <h2>Sampaikan Aspirasi</h2>
+    <p>Isi formulir berikut dengan jelas dan sopan.</p>
+  </div>
+
+  <div class="form-card">
+    <form id="aspirasiForm">
+
+      <label for="nama">Nama (opsional)</label>
+      <input type="text" id="nama"
+        placeholder="Masukkan nama kamu">
+
+      <label for="kelas">Kelas</label>
+      <input type="text" id="kelas"
+        placeholder="Contoh: XI IPA 1" required>
+
+      <label for="kategori">Kategori Aspirasi</label>
+      <select id="kategori" required>
+        <option value="">Pilih kategori</option>
+        <option>Kritik</option>
+        <option>Saran</option>
+        <option>Ide dan Gagasan</option>
+        <option>Aspirasi</option>
+      </select>
+
+      <label for="pesan">Isi Aspirasi</label>
+      <textarea id="pesan"
+        placeholder="Tuliskan aspirasi kamu di sini..."
+        required></textarea>
+
+      <div class="note">
+        Mohon gunakan bahasa yang sopan.
+        Jangan sertakan data pribadi yang sensitif.
+      </div>
+
+      <button type="submit" class="submit">
+        Kirim Aspirasi
+      </button>
+
+      <p id="hasil" role="status"
+        style="margin-top:15px;text-align:center">
+      </p>
+
     </form>
+  </div>
+</section>
+
+<footer>
+  <p><span>ASPIRASI MPK</span></p>
+  <p>Suara Kamu, Perubahan Kita.</p>
+  <p style="margin-top:10px">
+    © 2026 MPK | All Rights Reserved
+  </p>
+</footer>
+
+<script>
+document.getElementById("aspirasiForm")
+.addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  document.getElementById("hasil").textContent =
+    "Formulir berhasil divalidasi. Fitur penyimpanan belum diaktifkan.";
+
+});
+</script>
+
 </body>
 </html>
